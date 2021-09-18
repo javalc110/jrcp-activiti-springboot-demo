@@ -1,0 +1,9 @@
+grpc:
+  client:
+    # gRPC配置的名字，GrpcClient注解会用到
+    local-grpc-server:
+      # gRPC服务端地址
+      address: 'static://localhost:9090'
+      enableKeepAlive: true
+      keepAliveWithoutCalls: true
+      negotiationType: PLAINTEXT

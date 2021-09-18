@@ -1,0 +1,57 @@
+syntax = "proto3";
+
+package mygrpc;
+option java_package = "grpc.test";
+option java_outer_classname = "TestServiceProto";
+option java_multiple_files = true;
+
+service TestService{
+  // 远程调用出差流程部署
+  rpc evectionDeploy(evectionDeployRequest) returns (evectionDeployResult){};
+  // 远程开启出差流程
+  rpc evectionProcessStart(evectionProcessStartReq) returns (evectionProcessStartRes);
+  // 远程查询某个流程某个负责人的任务列表
+  rpc findEvectionPersonTaskList(findEvectionPersonTaskListReq) returns(stream findEvectionPersonTaskListRes);
+  // 远程完成任务
+  rpc completeTaskByTaskIds(stream completeTaskReq) returns (stream completeTaskRes);
+}
+
+message evectionDeployRequest {
+
+}
+
+message evectionDeployResult {
+  string evectionDeployId = 1;
+  string evectionDeployName = 2;
+}
+
+message evectionProcessStartReq {
+  string evectionDefinitionKey = 1;
+}
+
+message evectionProcessStartRes {
+  string evectionProcessDefinitionId = 1;
+  string processInstanceId = 2;
+  string activityId = 3;
+}
+
+message findEvectionPersonTaskListReq {
+  string assignee = 1;
+  string definitionKey = 2;
+}
+
+message findEvectionPersonTaskListRes {
+  string processInstanceId = 1;
+  string taskId = 2;
+  string assignee = 3;
+  string taskName = 4;
+}
+
+message completeTaskReq {
+  string taskId = 1;
+}
+
+message completeTaskRes {
+  bool flag = 1;
+  string taskId = 2;
+}

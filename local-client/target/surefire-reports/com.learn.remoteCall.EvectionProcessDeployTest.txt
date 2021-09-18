@@ -1,0 +1,22 @@
+-------------------------------------------------------------------------------
+Test set: com.learn.remoteCall.EvectionProcessDeployTest
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 0, Errors: 3, Skipped: 0, Time elapsed: 9.625 s <<< FAILURE! - in com.learn.remoteCall.EvectionProcessDeployTest
+findPersonTaskList  Time elapsed: 2.988 s  <<< ERROR!
+io.grpc.StatusRuntimeException: UNAVAILABLE: io exception
+	at com.learn.remoteCall.EvectionProcessDeployTest.findPersonTaskList(EvectionProcessDeployTest.java:28)
+Caused by: io.grpc.netty.shaded.io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: no further information: localhost/127.0.0.1:9090
+Caused by: java.net.ConnectException: Connection refused: no further information
+
+getEvectionProDeployResult  Time elapsed: 2.026 s  <<< ERROR!
+io.grpc.StatusRuntimeException: UNAVAILABLE: io exception
+	at com.learn.remoteCall.EvectionProcessDeployTest.getEvectionProDeployResult(EvectionProcessDeployTest.java:18)
+Caused by: io.grpc.netty.shaded.io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: no further information: localhost/127.0.0.1:9090
+Caused by: java.net.ConnectException: Connection refused: no further information
+
+getEvectionProStratRes  Time elapsed: 2.033 s  <<< ERROR!
+io.grpc.StatusRuntimeException: UNAVAILABLE: io exception
+	at com.learn.remoteCall.EvectionProcessDeployTest.getEvectionProStratRes(EvectionProcessDeployTest.java:23)
+Caused by: io.grpc.netty.shaded.io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: no further information: localhost/127.0.0.1:9090
+Caused by: java.net.ConnectException: Connection refused: no further information
+
